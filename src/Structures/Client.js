@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const intents = new Discord.Intents(32767);
 const Command = require("./Command.js");
-const fs = require("fs")
+const fs = require("fs");
+const Event = require("./Event.js");
 
 class Client extends Discord.Client {
   constructor() {
@@ -25,7 +26,19 @@ class Client extends Discord.Client {
         this.commands.set(command.name, command);
         console.log(`Loaded ${command.name} command`);
       });
-    this.login(token)
+
+    fs.readdirSync("./src/Events")
+      .filter((file) => file.endsWith(".js"))
+      .forEach((file) => {
+        /**
+         * @type {Event}
+         */
+        const event = require(`../Events/${file}`);
+        console.log(`Loaded ${event.event} event`);
+        this.on(event.event, event.run.bind(null, this));
+      });
+
+    this.login(token);
   }
 }
 
