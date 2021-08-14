@@ -11,9 +11,16 @@
 3. Run `npm i` to install all the necessary dependencies
 4. Create a new file called `.env`
 5. Open it using your code editor and fill in the following (Replace it with your bot's token ofc):
+
+**NOTE:** You are not supposed to add any `"` or spaces to the env file!
+```env
+#REQUIRED
+BOT_TOKEN=ODc0Nz****************Yy.Y****g.l************************g #Replace it with your bot token
+
+#OPTIONAL
+BOT_LOG_CHANNEL=8****************3 #Replace it with your bot log channel in the server
 ```
-BOT_TOKEN=ODc0Nz****************Yy.Y****g.l************************g
-```
+6. Now open your CMD or any other terminal you use and navigate to the root folder location (i.e., inside the folder that has `package.json`) and run **`npm start`**
 
 ### Highlights:
 - Easy to use command handler
