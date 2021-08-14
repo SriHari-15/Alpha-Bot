@@ -2,6 +2,11 @@
 
 > Sorted from newest to old
 
+### v1.0.3
+- Added permission check for command handler
+- Added role ID check for command handler
+- Fixed multiple checks causing false errors
+
 ### v1.0.2.2
 - Any successful command will now be logged to the console in this format:
 ```

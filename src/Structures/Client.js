@@ -24,7 +24,7 @@ class Client extends Discord.Client {
          */
         const command = require(`../Commands/${file}`);
         this.commands.set(command.name, command);
-        console.log(`Loaded ${command.name} command`);
+        console.log(`Command Loaded > ${command.name}`);
       });
 
     fs.readdirSync("./src/Events")
@@ -34,7 +34,7 @@ class Client extends Discord.Client {
          * @type {Event}
          */
         const event = require(`../Events/${file}`);
-        console.log(`Loaded ${event.event} event`);
+        console.log(`Event Loaded > ${event.event}`);
         this.on(event.event, event.run.bind(null, this));
       });
 

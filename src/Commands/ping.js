@@ -4,6 +4,8 @@ const Discord = require("discord.js");
 module.exports = new Command({
   name: "ping",
   description: "Shows the ping of the bot",
+  permission: "",
+  role: "",
 
   async run(message, args, client) {
     const firstEmbed = new Discord.MessageEmbed()
