@@ -1,8 +1,8 @@
 const Event = require("../Structures/Event.js");
 
-const prefix = "."
+const prefix = ".";
 
-const fs = require("fs")
+// const fs = require("fs");
 
 module.exports = new Event("messageCreate", (client, message) => {
   if (!message.content.startsWith(prefix)) return;
@@ -14,7 +14,27 @@ module.exports = new Event("messageCreate", (client, message) => {
 
   command.run(message, args, client);
 
-  fs.appendFile("log.txt", message.content + "\n", (err) => {
-    if (err) throw err;
-  })
+  const moment = require("moment");
+  const time = moment().format("DD-MM-YYYY | HH:mm:ss");
+  let channelType;
+  if (message.channel.type == "DM") {
+    channelType = "DM";
+  } else {
+    channelType = message.channel.name;
+  }
+
+  const log_content =
+    "[" +
+    time +
+    "] " +
+    message.author.tag +
+    " | " +
+    message.channel.name +
+    " | " +
+    message.content;
+
+  console.log(log_content);
+  // fs.appendFile("log.txt", log_content + "\n", (err) => {
+  //   if (err) throw err;
+  // });
 });
