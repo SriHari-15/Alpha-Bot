@@ -5,6 +5,16 @@
 
 -------
 
+### How to Use?
+1. Download the code
+2. Extract it to a seperate folder
+3. Run `npm i` to install all the necessary dependencies
+4. Create a new file called `.env`
+5. Open it using your code editor and fill in the following (Replace it with your bot's token ofc):
+```
+BOT_TOKEN=ODc0Nz****************Yy.Y****g.l************************g
+```
+
 ### Highlights:
 - Easy to use command handler
 - Easy to use event handler
