@@ -1,11 +1,11 @@
-# Alpha-Bot
+# Alpha Bot
 * Description: General purpose discord bot for my server
 * Project started on: 14th August, 2021
-* Authors: Sri Hari
+* Author: Sri Hari
 
 -------
 
-## Highlights
+### Highlights:
 - Easy to use command handler
 - Easy to use event handler
 - Well organized
@@ -14,6 +14,13 @@
 
 ### Commands:
 - Ping Command
+
+### Latest Changlog:
+> The older changelogs can be found [here](https://github.com/SriHari-15/Alpha-Bot/blob/master/Changelog.md)!
+
+**v1.0.2:**
+- Added Events listener
+- Completely moved all the remaining events to the new event handler
 
 -----
 
