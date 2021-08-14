@@ -2,6 +2,8 @@ const Event = require("../Structures/Event.js");
 
 const prefix = "."
 
+const fs = require("fs")
+
 module.exports = new Event("messageCreate", (client, message) => {
   if (!message.content.startsWith(prefix)) return;
   const args = message.content.substring(prefix.length).split(/ +/);
@@ -11,4 +13,8 @@ module.exports = new Event("messageCreate", (client, message) => {
   if (!command) return;
 
   command.run(message, args, client);
+
+  fs.appendFile("log.txt", message.content + "\n", (err) => {
+    if (err) throw err;
+  })
 });

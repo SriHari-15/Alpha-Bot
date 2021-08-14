@@ -2,6 +2,9 @@
 
 > Sorted from newest to old
 
+### v1.0.2.1
+- Added commands logging to `./log.txt` (Any successful command will be logged)
+
 ### v1.0.2
 - Added Events listener
 - Completely moved all the remaining events to the new event handler

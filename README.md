@@ -28,9 +28,8 @@ BOT_TOKEN=ODc0Nz****************Yy.Y****g.l************************g
 ### Latest Changlog:
 > The older changelogs can be found [here](https://github.com/SriHari-15/Alpha-Bot/blob/master/Changelog.md)!
 
-**v1.0.2:**
-- Added Events listener
-- Completely moved all the remaining events to the new event handler
+**v1.0.2.1:**
+- Added commands logging to `./log.txt` (Any successful command will be logged)
 
 -----
 
