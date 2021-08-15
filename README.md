@@ -35,10 +35,15 @@ BOT_LOG_CHANNEL=8****************3 #Replace it with your bot log channel in the 
 ### Latest Changlog:
 > The older changelogs can be found [here](https://github.com/SriHari-15/Alpha-Bot/blob/master/Changelog.md)!
 
-**v1.0.3:**
-- Added permission check for command handler
-- Added role ID check for command handler
-- Fixed multiple checks causing false errors
+**v1.0.4:**
+- Added purge command
+- Added avatar command
+- Added userinfo command
+- Fixed some bugs causing only purge command to be used regardless of anything we enter
+- Fixed bugs in `messageCreate.js`
+- Fixed bugs in `Event.js`
+- Fixed bugs in `index.js`
+- Fixed bugs in `ping.js`
 
 -----
 

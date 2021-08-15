@@ -2,6 +2,16 @@
 
 > Sorted from newest to old
 
+### v1.0.4
+- Added purge command
+- Added avatar command
+- Added userinfo command
+- Fixed some bugs causing only purge command to be used regardless of anything we enter
+- Fixed bugs in `messageCreate.js`
+- Fixed bugs in `Event.js`
+- Fixed bugs in `index.js`
+- Fixed bugs in `ping.js`
+
 ### v1.0.3
 - Added permission check for command handler
 - Added role ID check for command handler

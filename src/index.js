@@ -1,5 +1,7 @@
 console.clear();
-// const Discord = require("discord.js");
+
+// Disabling pings in replies (NOTE FOR SELF)
+// message.reply({embeds: [firstEmbed], allowedMentions: {repliedUser: false}})
 
 const Client = require("./Structures/Client.js");
 const client = new Client();
