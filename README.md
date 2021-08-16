@@ -30,8 +30,18 @@ ANNOUNCEMENT_CHANNEL=8****************4 #Replace it with your announcement chann
 - Can be used for educational purpose too
 - Comments and descriptions in all necessary areas!
 
-### Commands:
-- Ping Command
+### Commands & Syntax:
+- Announce
+  - You need to have specified your announcement channel ID in the `.env` file!
+  - `.announce <Message>`
+- Avatar
+  - `.avatar (or) .avatar <@User/User ID>`
+- Ping
+  - `.ping`
+- Purge
+  - `.purge <Count>`
+- User Info
+  - `.userinfo (or) .userinfo <@User/User ID>`
 
 ### Latest Changlog:
 > The older changelogs can be found [here](https://github.com/SriHari-15/Alpha-Bot/blob/master/Changelog.md)!
