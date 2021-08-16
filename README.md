@@ -19,6 +19,7 @@ BOT_TOKEN=ODc0Nz****************Yy.Y****g.l************************g #Replace it
 
 #OPTIONAL
 BOT_LOG_CHANNEL=8****************3 #Replace it with your bot log channel in the server
+ANNOUNCEMENT_CHANNEL=8****************4 #Replace it with your announcement channel in the server
 ```
 6. Now open your CMD or any other terminal you use and navigate to the root folder location (i.e., inside the folder that has `package.json`) and run **`npm start`**
 
@@ -35,15 +36,11 @@ BOT_LOG_CHANNEL=8****************3 #Replace it with your bot log channel in the 
 ### Latest Changlog:
 > The older changelogs can be found [here](https://github.com/SriHari-15/Alpha-Bot/blob/master/Changelog.md)!
 
-**v1.0.4:**
-- Added purge command
-- Added avatar command
-- Added userinfo command
-- Fixed some bugs causing only purge command to be used regardless of anything we enter
-- Fixed bugs in `messageCreate.js`
-- Fixed bugs in `Event.js`
-- Fixed bugs in `index.js`
-- Fixed bugs in `ping.js`
+**v1.0.4.1:**
+- Added announce command
+- Fixed array input for `command.permission` (Now accepts an array of permissions)
+- Fixed array input for `command.roles` (Now accepts an array of role IDs)
+- Fixed some intents
 
 -----
 

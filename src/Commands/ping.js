@@ -11,15 +11,24 @@ module.exports = new Command({
     const firstEmbed = new Discord.MessageEmbed()
       .setAuthor("Ping Command")
       .setColor("YELLOW")
-      .setFooter(`Command ran by ${message.author.tag}`, message.author.avatarURL({ dynamic: true }))
+      .setFooter(
+        `Command ran by ${message.author.tag}`,
+        message.author.avatarURL({ dynamic: true })
+      )
       .setTimestamp()
       .setDescription("Calculating ping...");
-    const sentMessage = await message.reply({embeds: [firstEmbed], allowedMentions: { repliedUser: false }});
+    const sentMessage = await message.reply({
+      embeds: [firstEmbed],
+      allowedMentions: { repliedUser: false },
+    });
     const ping = sentMessage.createdTimestamp - message.createdTimestamp;
     const secEmbed = new Discord.MessageEmbed()
       .setAuthor("Ping Command")
       .setColor("GREEN")
-      .setFooter(`Command ran by ${message.author.tag}`, message.author.avatarURL({ dynamic: true }))
+      .setFooter(
+        `Command ran by ${message.author.tag}`,
+        message.author.avatarURL({ dynamic: true })
+      )
       .setTimestamp()
       .setDescription(`API Latency: ${client.ws.ping}\nBot Latency: ${ping}`);
     sentMessage.edit({ embeds: [secEmbed] });

@@ -45,8 +45,8 @@ module.exports = new Command({
       return;
     }
 
-    const initStatus = targetUser.presence.status
-    const status = initStatus.charAt(0).toUpperCase() + initStatus.slice(1)
+    const initStatus = targetUser.presence.status;
+    const status = initStatus.charAt(0).toUpperCase() + initStatus.slice(1);
 
     const finalEmbed = new MessageEmbed()
       .setAuthor("User Info Command")
@@ -83,8 +83,8 @@ module.exports = new Command({
         },
         {
           name: "Highest Role",
-          value: `<@&${targetUser.roles.highest.id}>`
-        }
+          value: `<@&${targetUser.roles.highest.id}>`,
+        },
       ]);
     message.channel.send({ embeds: [finalEmbed] });
   },

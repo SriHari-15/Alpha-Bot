@@ -2,6 +2,12 @@
 
 > Sorted from newest to old
 
+### v1.0.4.1
+- Added announce command
+- Fixed array input for `command.permission` (Now accepts an array of permissions)
+- Fixed array input for `command.roles` (Now accepts an array of role IDs)
+- Fixed some intents
+
 ### v1.0.4
 - Added purge command
 - Added avatar command

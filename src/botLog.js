@@ -13,6 +13,13 @@ module.exports = async (message) => {
   const { guild } = message;
   const logChannel = await guild.channels.fetch(bot_log_id);
 
+  if (!logChannel) {
+    console.warn(
+      "[ERROR] Invalid bot log channel! Please enter a valid channel in the .env file"
+    );
+    return;
+  }
+
   let channelType;
   let channelId;
   if (message.channel.type == "DM") {
@@ -27,9 +34,7 @@ module.exports = async (message) => {
     .setAuthor(message.author.tag, message.author.avatarURL({ dynamic: true }))
     .setTimestamp()
     .setColor("BLACK")
-    .setDescription(
-      `Command ran: ${message.content}\nChannel: ${channelId}`
-    );
+    .setDescription(`Command ran: ${message.content}\nChannel: ${channelId}`);
   logChannel.send({ embeds: [embed] });
 
   const moment = require("moment");

@@ -14,7 +14,10 @@ module.exports = new Command({
       .setAuthor("Purge Command")
       .setColor("RED")
       .setTimestamp()
-      .setFooter(`Command ran by ${message.author.tag}`, message.author.avatarURL({ dynamic: true }))
+      .setFooter(
+        `Command ran by ${message.author.tag}`,
+        message.author.avatarURL({ dynamic: true })
+      )
       .setDescription(
         "Unable to run the command. Please follow this template:\n`.purge <count> | .purge 10`"
       );
@@ -27,7 +30,10 @@ module.exports = new Command({
       .setAuthor("Purge Command")
       .setColor("RED")
       .setTimestamp()
-      .setFooter(`Command ran by ${message.author.tag}`, message.author.avatarURL({ dynamic: true }))
+      .setFooter(
+        `Command ran by ${message.author.tag}`,
+        message.author.avatarURL({ dynamic: true })
+      )
       .setDescription("You cannot purge more than 100 messages!");
     if (amtParsed > 100) return message.channel.send({ embeds: [failEmbed2] });
 
@@ -37,16 +43,16 @@ module.exports = new Command({
       .setAuthor("Purge Command")
       .setColor("GREEN")
       .setTimestamp()
-      .setFooter(`Command ran by ${message.author.tag}`, message.author.avatarURL({ dynamic: true }))
-      .setDescription(`Successfully cleared ${amtParsed} messages!`);
-    // message.channel.send({ embeds: [successEmbed] }).then(result => {
-    //   setTimeout(() => {
-    //     result.delete();
-    //   }, 3000)
-    // })
-    const resultMsg = await message.channel.send({ embeds: [successEmbed] })
+      .setFooter(
+        `Command ran by ${message.author.tag}`,
+        message.author.avatarURL({ dynamic: true })
+      )
+      .setDescription(
+        `<a:am_gifyes:868165574419710032> Successfully cleared ${amtParsed} messages!`
+      );
+    const resultMsg = await message.channel.send({ embeds: [successEmbed] });
     setTimeout(() => {
-      resultMsg.delete()
-    }, 3000)
+      resultMsg.delete();
+    }, 3000);
   },
 });

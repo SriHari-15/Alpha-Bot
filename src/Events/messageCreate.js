@@ -18,11 +18,31 @@ module.exports = new Event("messageCreate", async (client, message) => {
   const capCommand =
     command.name.charAt(0).toUpperCase() + command.name.slice(1) + " Command";
 
-  const permissions = message.member.permissions.has(command.permission, true);
+  //PERMS CHECK
+  let permissions = false;
+
+  if (typeof command.permission == "string") {
+    permissions = await message.member.permissions.has(
+      command.permission,
+      true
+    );
+  } else {
+    for (let i = 0; i <= command.permission.length; i++) {
+      let tempCheck = await message.member.permissions.has(
+        command.permission[i],
+        true
+      );
+      if (tempCheck) permissions = true;
+    }
+  }
+
   const permsFailEmbed = new MessageEmbed()
     .setAuthor(capCommand)
     .setColor("RED")
-    .setFooter(`Command ran by ${message.author.tag}`, message.author.avatarURL({ dynamic: true }))
+    .setFooter(
+      `Command ran by ${message.author.tag}`,
+      message.author.avatarURL({ dynamic: true })
+    )
     .setTimestamp()
     .setDescription(
       "You do not have the required permissions to run this command!"
@@ -33,13 +53,28 @@ module.exports = new Event("messageCreate", async (client, message) => {
       allowedMentions: { repliedUser: false },
     });
 
+  // ROLE CHECK
   const roleFailEmbed = new MessageEmbed()
     .setAuthor(capCommand)
     .setColor("RED")
-    .setFooter(`Command ran by ${message.author.tag}`, message.author.avatarURL({ dynamic: true }))
+    .setFooter(
+      `Command ran by ${message.author.tag}`,
+      message.author.avatarURL({ dynamic: true })
+    )
     .setTimestamp()
     .setDescription("You do not have the required roles to run this command!");
-  const role = await message.member.roles.cache.has(command.role);
+
+  let role = false;
+
+  if (typeof command.role == "string") {
+    role = await message.member.roles.cache.has(command.role);
+  } else {
+    for (let i = 0; i <= command.roles.length; i++) {
+      const temp = await message.member.roles.cache.has(command.role[i]);
+      if (temp) role = true;
+    }
+  }
+
   if (!role && command.role != "")
     return message.reply({
       embeds: [roleFailEmbed],

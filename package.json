@@ -1,6 +1,6 @@
 {
   "name": "alpha-bot",
-  "version": "1.0.4",
+  "version": "1.0.4.1",
   "description": "General purpose discord bot for my server",
   "main": "src/index.js",
   "scripts": {
