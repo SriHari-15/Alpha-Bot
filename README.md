@@ -36,11 +36,8 @@ ANNOUNCEMENT_CHANNEL=8****************4 #Replace it with your announcement chann
 ### Latest Changlog:
 > The older changelogs can be found [here](https://github.com/SriHari-15/Alpha-Bot/blob/master/Changelog.md)!
 
-**v1.0.4.1:**
-- Added announce command
-- Fixed array input for `command.permission` (Now accepts an array of permissions)
-- Fixed array input for `command.roles` (Now accepts an array of role IDs)
-- Fixed some intents
+**v1.0.4.2:**
+- Added comments for every file in `src`!
 
 -----
 

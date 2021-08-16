@@ -16,6 +16,7 @@ class Client extends Discord.Client {
   }
 
   start(token) {
+    // To get any file in "Commands" folder that ends with .js
     fs.readdirSync("./src/Commands")
       .filter((file) => file.endsWith(".js"))
       .forEach((file) => {
@@ -27,6 +28,7 @@ class Client extends Discord.Client {
         console.log(`Command Loaded > ${command.name}`);
       });
 
+    // Same as above but for "Events"
     fs.readdirSync("./src/Events")
       .filter((file) => file.endsWith(".js"))
       .forEach((file) => {

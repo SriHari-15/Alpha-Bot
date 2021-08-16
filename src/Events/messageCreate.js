@@ -15,6 +15,7 @@ module.exports = new Event("messageCreate", async (client, message) => {
   const command = client.commands.find((cmd) => cmd.name == args[0]);
   if (!command) return;
 
+  // Making the first letter of the command capital
   const capCommand =
     command.name.charAt(0).toUpperCase() + command.name.slice(1) + " Command";
 

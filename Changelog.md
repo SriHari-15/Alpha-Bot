@@ -2,6 +2,9 @@
 
 > Sorted from newest to old
 
+### v1.0.4.2
+- Added comments for every file in `src`!
+
 ### v1.0.4.1
 - Added announce command
 - Fixed array input for `command.permission` (Now accepts an array of permissions)

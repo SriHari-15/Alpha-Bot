@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const Client = require("./Client.js");
 
+// This class collects all the Events
+
 /**
  * @template {keyof Discord.ClientEvents} K
  * @param {Client} client

@@ -8,15 +8,7 @@ module.exports = new Command({
   role: "",
 
   async run(message, args, client) {
-    // const embed = new Discord.MessageEmbed()
-    //   .setColor("BLURPLE")
-    //   .setImage(message.author.avatarURL({ dynamic: true }))
-    //   .setFooter(`Command ran by ${message.author.tag}`)
-    //   .setTimestamp();
-    // message.channel.send({ embeds: [embed] });
-
     args.shift();
-
     const failEmbed = new MessageEmbed()
       .setAuthor("Avatar Command")
       .setColor("RED")
@@ -27,10 +19,12 @@ module.exports = new Command({
       .setDescription(
         "Unable to run the command. Please enter a valid user & follow this template:\n`.avatar (or) .avatar <@User/User ID> | .avatar @Sri Hari#0001`"
       );
+    // Automatically assings the message author's ID if no ID is specified
     if (!args[0]) {
       args[0] = message.author.id;
     }
 
+    // This is my method of acceoting both @Users and UIDs... There are more efficient & easier ways to do it but, I just like this
     const target = message.mentions.users.first();
     let uid;
 

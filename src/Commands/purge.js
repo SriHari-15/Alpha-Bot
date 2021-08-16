@@ -8,7 +8,7 @@ module.exports = new Command({
   role: "",
 
   async run(message, args, client) {
-    const amt = args[1];
+    const amt = args[1]; // So that it does not accept any values after the first arg
 
     const failEmbed = new MessageEmbed()
       .setAuthor("Purge Command")
@@ -21,6 +21,7 @@ module.exports = new Command({
       .setDescription(
         "Unable to run the command. Please follow this template:\n`.purge <count> | .purge 10`"
       );
+    //Ensuring that an amt exists and it is a number
     if (!amt || isNaN(amt))
       return message.channel.send({ embeds: [failEmbed] });
 
@@ -56,3 +57,5 @@ module.exports = new Command({
     }, 3000);
   },
 });
+
+// TODO: Ability to accept more than 100 msgs and "while" loop it

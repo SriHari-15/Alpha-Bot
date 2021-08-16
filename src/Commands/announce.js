@@ -9,6 +9,7 @@ module.exports = new Command({
   role: "",
 
   async run(message, args, client) {
+    // Checks to make sure the ID exists in the .env file
     if (!announcementChannelId) {
       message.reply({
         content:
@@ -19,11 +20,12 @@ module.exports = new Command({
       return;
     }
 
-    args.shift();
+    args.shift(); //Removes the actual command from the args
 
     const announcementChannel = await message.guild.channels.fetch(
       announcementChannelId
     );
+    // Added to prevent people entering random numbers as the channel ID
     if (!announcementChannel) {
       message.reply({
         content: "Please enter a valid announcement channel in the .env file!",

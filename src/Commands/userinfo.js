@@ -22,6 +22,7 @@ module.exports = new Command({
         "Unable to run the command. Please follow this template:\n" +
           "`.userinfo (or) .userinfo <@User/User ID> | .userinfo @Sri Hari#0001`"
       );
+    // My method to accept @User as well as User ID
     if (!args[0]) {
       args[0] = message.author.id;
     }
@@ -45,6 +46,7 @@ module.exports = new Command({
       return;
     }
 
+    // Getting the presence and making the first letter of it capital ;)
     const initStatus = targetUser.presence.status;
     const status = initStatus.charAt(0).toUpperCase() + initStatus.slice(1);
 
@@ -67,7 +69,7 @@ module.exports = new Command({
         },
         {
           name: "Created At",
-          value: targetUser.user.createdAt.toString(),
+          value: targetUser.user.createdAt.toString(), // value doesnt accept anything other than a String
         },
         {
           name: "Joined At",

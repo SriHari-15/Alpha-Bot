@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const Client = require("./Client.js");
 
+// This class collects & stores all the Commands
+
 /**
  *
  * @param {Discord.Message} message

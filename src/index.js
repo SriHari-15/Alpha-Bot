@@ -10,3 +10,5 @@ require("dotenv-flow").config();
 const token = process.env.BOT_TOKEN;
 
 client.start(token);
+
+// Clean AF boi

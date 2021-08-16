@@ -19,7 +19,7 @@ module.exports = new Command({
       .setDescription("Calculating ping...");
     const sentMessage = await message.reply({
       embeds: [firstEmbed],
-      allowedMentions: { repliedUser: false },
+      allowedMentions: { repliedUser: false }, // Prevents reply ping
     });
     const ping = sentMessage.createdTimestamp - message.createdTimestamp;
     const secEmbed = new Discord.MessageEmbed()
