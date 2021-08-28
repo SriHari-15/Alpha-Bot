@@ -27,8 +27,7 @@ ANNOUNCEMENT_CHANNEL=8****************4 #Replace it with your announcement chann
 - Easy to use command handler
 - Easy to use event handler
 - Well organized
-- Can be used for educational purpose too
-- Comments and descriptions in all necessary areas!
+- Comments and descriptions in all necessary areas
 
 ### Commands & Syntax:
 - Announce
